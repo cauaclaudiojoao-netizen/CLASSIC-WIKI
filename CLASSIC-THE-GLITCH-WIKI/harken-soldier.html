@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harken Soldier - CLASSIC, THE GLITCH Wiki</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="harken-layout">
+
+        <!-- =================================
+             LEFT SIDE
+        ================================== -->
+
+        <div class="harken-left">
+
+            <!-- APPEARANCE -->
+
+            <section class="appearance-section">
+
+                <h2>Appearance</h2>
+
+                <p>
+                    Your body is made of yellow and orange blocks and has two halos around your torso that make the
+                    <strong class="lost-soldier-highlight">Lost Soldier</strong>
+                    look like the character
+                    <strong class="harken-highlight">"Harken"</strong>
+                    from Die of Death. The skin has a big eye on the head, torso, and left hand, and it has a small angel halo on top of the head.
+                </p>
+
+            </section>
+
+
+            <!-- DAMAGE CONTROL -->
+
+            <section class="damage-control">
+
+                <img
+                    src="images/damage-control.png"
+                    alt="Damage Control"
+                    class="damage-control-image"
+                >
+
+                <h2>Damage Control</h2>
+
+                <audio id="damageControlSound">
+                    <source src="sounds/damage-control.mp3" type="audio/mpeg">
+                </audio>
+
+                <button class="sound-button" id="soundButton">
+                    ▶ Play Sound
+                </button>
+
+            </section>
+
+
+            <!-- GALLERY -->
+
+            <section class="harken-gallery-section">
+
+                <h2>Gallery</h2>
+
+                <div class="harken-gallery">
+
+                    <div class="gallery-card">
+                        <img
+                            src="images/full-render.png"
+                            alt="Full Render"
+                        >
+                        <p>Full Render</p>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img
+                            src="images/full-render-no-filters.png"
+                            alt="Full render without filters"
+                        >
+                        <p>Full render without filters</p>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img
+                            src="images/harken-in-game.png"
+                            alt="Currently in the Game"
+                        >
+                        <p>Currently in the Game</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================
+             RIGHT SIDE
+        ================================== -->
+
+        <div class="harken-right">
+
+            <header>
+
+                <h1>HARKEN SOLDIER</h1>
+
+                <p>DEV SKIN</p>
+
+            </header>
+
+
+            <!-- TOP BANNER -->
+
+            <img
+                src="images/harken-banner.png"
+                alt="Harken Soldier Banner"
+                class="harken-banner"
+            >
+
+
+            <!-- MAIN IMAGE -->
+
+            <img
+                src="images/harken-soldier.png"
+                alt="Harken Soldier"
+                class="skin-page-image"
+            >
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="character-description">
+                I may be weird, but never look into my eyes..
+            </p>
+
+
+            <!-- BACK BUTTON -->
+
+            <a href="skins.html" class="back-button">
+                Back to Skins
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- =================================
+         SOUND SYSTEM
+    ================================== -->
+
+    <script>
+
+        const sound = document.getElementById("damageControlSound");
+        const soundButton = document.getElementById("soundButton");
+
+        soundButton.addEventListener("click", function () {
+
+            if (sound.paused) {
+
+                sound.play();
+
+                soundButton.textContent = "⏸ Pause Sound";
+
+            } else {
+
+                sound.pause();
+
+                soundButton.textContent = "▶ Play Sound";
+
+            }
+
+        });
+
+
+        sound.addEventListener("ended", function () {
+
+            soundButton.textContent = "▶ Play Sound";
+
+        });
+
+
+        sound.addEventListener("pause", function () {
+
+            if (sound.ended) {
+                soundButton.textContent = "▶ Play Sound";
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
