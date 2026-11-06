@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smiling Soldier - CLASSIC, THE GLITCH Wiki</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="harken-layout">
+
+        <!-- =================================
+             LEFT SIDE
+        ================================== -->
+
+        <div class="harken-left">
+
+            <!-- APPEARANCE -->
+
+            <section class="appearance-section">
+
+                <h2>Appearance</h2>
+
+                <p>
+                    His serious face is replaced by a smile, reminiscent of the 'Winning Smile' face.
+                    The Smiling Soldier was inspired by the game
+                    <strong class="infectious-smile-highlight">Infectious Smile</strong>.
+                    His depiction shows the Smiling Soldier making a 'Shhh...' gesture.
+                    The place where he is looks like the safe zone for humans in
+                    <strong class="infectious-smile-highlight">Infectious Smile</strong>,
+                    with several bodies scattered on the ground, and his knife has been replaced by a compass with a white axe.
+                    His outfit is a white suit with black pants and shoes.
+                    The Smiling Soldier is a smiling version of the
+                    <strong class="lost-soldier-highlight">Lost Soldier</strong>.
+                </p>
+
+            </section>
+
+
+            <!-- SMILING NIGHTMARE -->
+
+            <section class="damage-control">
+
+                <img
+                    src="images/nightmare-smiling.png"
+                    alt="Smiling Nightmare"
+                    class="damage-control-image"
+                >
+
+                <h2 class="smiling-nightmare-title">
+                    Smiling Nightmare
+                </h2>
+
+                <audio id="smilingNightmareSound">
+                    <source src="sounds/smiling-nightmare.mp3" type="audio/mpeg">
+                </audio>
+
+                <button class="sound-button" id="smilingSoundButton">
+                    ▶ Play Sound
+                </button>
+
+            </section>
+
+
+            <!-- GALLERY -->
+
+            <section class="harken-gallery-section">
+
+                <h2>Gallery</h2>
+
+                <div class="harken-gallery">
+
+                    <div class="gallery-card">
+
+                        <img
+                            src="images/smiling-soldier-full-render.png"
+                            alt="Full Render"
+                        >
+
+                        <p>Full Render</p>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <img
+                            src="images/smiling-soldier-full-render-no-filters.png"
+                            alt="Full Render Without Filters"
+                        >
+
+                        <p>Full Render Without Filters</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================
+             RIGHT SIDE
+        ================================== -->
+
+        <div class="harken-right">
+
+            <header>
+
+                <h1>SMILING SOLDIER</h1>
+
+                <p>NORMAL SKIN</p>
+
+            </header>
+
+
+            <!-- MAIN IMAGE -->
+
+            <img
+                src="images/smiling-soldier.png"
+                alt="Smiling Soldier"
+                class="skin-page-image"
+            >
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="character-description">
+                A smiling version of the Lost Soldier.
+            </p>
+
+
+            <!-- BACK BUTTON -->
+
+            <a href="skins.html" class="back-button">
+                Back to Skins
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- =================================
+         SOUND SYSTEM
+    ================================== -->
+
+    <script>
+
+        const smilingSound = document.getElementById("smilingNightmareSound");
+        const smilingSoundButton = document.getElementById("smilingSoundButton");
+
+        smilingSoundButton.addEventListener("click", function () {
+
+            if (smilingSound.paused) {
+
+                smilingSound.play()
+                    .then(function () {
+                        smilingSoundButton.textContent = "⏸ Pause Sound";
+                    })
+                    .catch(function () {
+                        smilingSoundButton.textContent = "▶ Play Sound";
+                    });
+
+            } else {
+
+                smilingSound.pause();
+                smilingSoundButton.textContent = "▶ Play Sound";
+
+            }
+
+        });
+
+
+        smilingSound.addEventListener("ended", function () {
+
+            smilingSoundButton.textContent = "▶ Play Sound";
+
+        });
+
+    </script>
+
+</body>
+
+</html>
